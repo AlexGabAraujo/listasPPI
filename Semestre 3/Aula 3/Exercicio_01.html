@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        class Pessoa {
+            constructor(nome, anoNasc){
+                this.nome = nome;
+                this.anoNasc = anoNasc;
+            }
+
+            getIdade(){
+                return new Date().getFullYear() - this.anoNasc;
+            }
+        }
+
+        class Aluno extends Pessoa{
+            constructor(nome, anoNasc, matricula){
+                super(nome, anoNasc);
+                this.matricula = matricula;
+            }
+        }
+
+
+        gustavo = new Pessoa("Gustavo", 1981);
+        alert("Nova pessoa criada: " + gustavo.nome + ", "+gustavo.anoNasc);
+
+        gustavo.anoNasc = 1991;
+        alert("Nova pessoa criada: " + gustavo.nome + ", "+gustavo.anoNasc);
+
+        alert("Idade: " + gustavo.Idade());
+    </script>
+</body>
+</html>
